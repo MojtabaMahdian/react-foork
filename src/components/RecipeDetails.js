@@ -10,21 +10,21 @@ export default class RecipeDetails extends Component {
     };
   }
 
-  // async componentDidMount() {
-  //   const id = this.props.id;
-  //   const url = `https://www.food2fork.com/api/get?key=012b4157a2fd02428d424a3e5cf4c1fb&rId=${id}`;
-  //   try {
-  //     const data = await fetch(url);
-  //     const jsonData = await data.json();
-  //     console.log(jsonData.recipe);
+  async componentDidMount() {
+    const id = this.props.id;
+    const url = `https://www.food2fork.com/api/get?key=012b4157a2fd02428d424a3e5cf4c1fb&rId=${id}`;
+    try {
+      const data = await fetch(url);
+      const jsonData = await data.json();
+      console.log(jsonData.recipe);
 
-  //     this.setState({
-  //       recipe: jsonData.recipe
-  //     });
-  //   } catch (error) {
-  //     console.log(error);
-  //   }
-  // }
+      this.setState({
+        recipe: jsonData.recipe
+      });
+    } catch (error) {
+      console.log(error);
+    }
+  }
 
   render() {
     const { handelIndex } = this.props;
